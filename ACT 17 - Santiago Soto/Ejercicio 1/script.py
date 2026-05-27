@@ -20,18 +20,14 @@ for x in range(1):
 for x in range(len(lista)):
     sublista_limpia = []
 
-    
     for j in range(len(lista[x])):
         if lista[x][j] > 50:
             acumulador.append(lista[x][j])
         else:
             sublista_limpia.append(lista[x][j])
-            
     lista[x] = sublista_limpia
 
-for numero in acumulador:
-    lista[0].append(numero)
-
-
+for numero in range (len(acumulador)):
+    lista[0].append(acumulador[numero])
 
 print("Resultado:", lista)
