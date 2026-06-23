@@ -1,0 +1,393 @@
+
+@font-face {
+    font-family: 'SairaCustom';
+    src: url('../FONTS/Playfair_Display,Saira/Saira-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SairaCustom';
+    src: url('../FONTS/Playfair_Display,Saira/Saira-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'SairaCustom'; 
+    background-color: #121212;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: 0.3s ease; 
+}
+
+ul {
+    list-style: none;
+}
+.max-ancho::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #ff3333;
+    margin: 40px 0;
+    opacity: 0.2;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #121212;
+    z-index: 1000; 
+    border-bottom: 1px solid #222222;
+}
+
+.contenedor-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-marca {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.rojo {
+    color: #ff3333;
+}
+
+.lista-nav {
+    display: flex; 
+    gap: 25px;
+}
+
+.lista-nav a {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #b3b3b3;
+}
+
+/* Cambio de color suave al pasar el cursor */
+.lista-nav a:hover {
+    color: #ff3333;
+}
+
+/*
+   4. SECCIÓN SOBRE MÍ*/
+main {
+    margin-top: 80px; 
+}
+
+.seccion-presentacion {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.presentacion-container {
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    gap: 50px; 
+}
+
+.presentacion-foto {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; 
+}
+
+#Retrato {
+    width: 100%;
+    max-width: 380px; 
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px #000000;
+}
+
+.presentacion-texto {
+    flex: 1;
+}
+
+.presentacion-texto h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.presentacion-texto h2 {
+    font-size: 1.5rem;
+    color: #ff3333;
+    margin-bottom: 15px;
+}
+
+.presentacion-texto p {
+    font-size: 1.1rem;
+    color: #b3b3b3;
+    max-width: 450px; 
+}
+
+/*  5. SECCIÓN INFORMACIÓN PERSONAL Y ESTUDIOS */
+.seccion-info {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.titulo-main {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.boceto-fila {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 60px; 
+}
+
+.boceto-fila.invertida {
+    flex-direction: row-reverse;
+}
+
+.col-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.col-img img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px #000000;
+}
+
+.boceto-col-texto {
+    flex: 1;
+}
+
+.boceto-col-texto p {
+    font-size: 1.1rem;
+    color: #b3b3b3;
+    margin-bottom: 15px;
+}
+
+.boceto-col-texto strong {
+    color: #ffffff; 
+}
+
+.boceto-col-texto h3 {
+    font-size: 1.4rem;
+    color: #ff3333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/*6. SECCIÓN HABILIDADES (MAQUETADO FLEXBOX)*/
+.seccion-habilidades {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.cuadrados {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.cuadrado {
+    flex: 1; 
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 25px 20px;
+    text-align: center;
+    border: 1px solid #222222;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.icono {
+    width: 100%;
+    max-width: 75px; 
+    height: auto;
+    margin: 0 auto 15px auto;
+    display: block;
+}
+
+.cuadrado h3 {
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+/* Efecto hover: Elevación y Sombra suave (Exigido en consigna) */
+.cuadrado:hover {
+    border-color: #ff3333;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 51, 51, 0.1);
+}
+
+/*  7. SECCIÓN PORTFOLIO (MAQUETADO CSS GRID)*/
+.seccion-portfolio {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.portfolio-cuadro {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #222222;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.portfolio-cuadro img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover; 
+}
+
+.portfolio-cuadro-info {
+    padding: 20px;
+    height: 220px;     
+    position: relative;  
+}
+.portfolio-cuadro-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.portfolio-cuadro-info p {
+    font-size: 0.9rem;
+    color: #b3b3b3;
+    margin-bottom: 15px;
+}
+
+.btn-inicio {
+    display: block;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid #ff3333;
+    color: #ff3333;
+    padding: 10px 0;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+
+    position: absolute; 
+    bottom: 20px;      
+    left: 20px;          
+    right: 20px;     
+}
+
+.btn-inicio:hover {
+    background-color: #ff3333;
+    color: #ffffff;
+}
+
+.portfolio-cuadro:hover {
+    border-color: #ff3333;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+/*8. FOOTER  */
+footer {
+    background-color: #0b0b0b; 
+    padding: 20px 10px; 
+    margin-top: 30px; 
+    border-top: 1px solid #222222; 
+    text-align: center;
+}
+
+.footer-contenido {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+footer h2 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+footer p {
+    font-size: 0.85rem; 
+    color: #b3b3b3;
+    margin-bottom: 10px;
+}
+
+.footer-email {
+    display: inline-block;
+    font-size: 1rem; 
+    font-weight: bold;
+    color: #ff3333;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-email:hover {
+    color: #ffffff;
+}
+
+.social-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px; 
+    margin-bottom: 15px;
+}
+
+.social-icon-link {
+    font-size: 0.8rem; 
+    padding: 4px 10px; 
+    border: 1px solid #222222;
+    border-radius: 4px;
+    background-color: #1e1e1e;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.social-icon-link:hover {
+    background-color: #ff3333;
+    border-color: #ff3333;
+}
+
+.copyright {
+    font-size: 0.7rem; 
+    color: #555555;
+}
