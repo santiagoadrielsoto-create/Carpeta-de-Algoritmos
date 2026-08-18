@@ -35,10 +35,12 @@ def cargar():
 def reportar_promedios(sensores):
     promedios = {}
 
-    for estacion, lecturas in sensores.items():
+    for estacion in sensores:
+        lecturas = sensores[estacion]
         suma = 0
-        for l in lecturas:
-            suma = suma + l
+
+        for i in range(len(lecturas)):
+            suma = suma + lecturas[i]
 
         promedio = suma / len(lecturas)
         promedios[estacion] = promedio
@@ -48,8 +50,9 @@ def reportar_promedios(sensores):
 
 
 def alerta_ambiental(promedios):
-    print("--- Alertas Ambientales ---")
-    for estacion, promedio in promedios.items():
+    print("Alertas Ambientales")
+    for estacion in promedios:
+        promedio = promedios[estacion]
         if promedio > 400:
             print(
                 "ALERTA ROJA (Protocolo de Emergencia) en:",
