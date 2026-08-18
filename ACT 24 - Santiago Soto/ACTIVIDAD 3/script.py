@@ -75,12 +75,7 @@ def dispositivo_critico(hogar):
 
     if disp_critico != "":
         print(
-            "Dispositivo critico:",
-            disp_critico,
-            "con",
-            max_consumo,
-            "Watts en la habitacion:",
-            hab_critica,
+            "Dispositivo critico:",disp_critico,"con", max_consumo,"Watts en la habitacion:",hab_critica,
         )
 
 
