@@ -54,13 +54,7 @@ def alerta_ambiental(promedios):
     for estacion in promedios:
         promedio = promedios[estacion]
         if promedio > 400:
-            print(
-                "ALERTA ROJA (Protocolo de Emergencia) en:",
-                estacion,
-                "con",
-                promedio,
-                "ppm",
-            )
+            print("ALERTA ROJA (Protocolo de Emergencia) en:",estacion,"con",promedio,"ppm",)
 
 
 sensores = cargar()
