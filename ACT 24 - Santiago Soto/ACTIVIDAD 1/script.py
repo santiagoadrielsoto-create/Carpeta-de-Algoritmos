@@ -1,4 +1,4 @@
-""" CONSIGNA - PUNTO 1:
+"""1:
  Una ciudad inteligente cuenta con sensores que miden las partículas contaminantes
  de dióxido de carbono (CO2) en diferentes puntos geográficos.
  Crear un diccionario donde la Clave sea el nombre del barrio o estación de
