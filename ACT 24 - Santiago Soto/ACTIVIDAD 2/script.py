@@ -19,7 +19,7 @@ def cargar():
 
     for i in range(3):
         nombre_gremio = input(f"Ingrese el nombre del gremio {i + 1}: ")
-        cantidad = int(input(f"¿Cuántos integrantes tiene {nombre_gremio}?: "))
+        cantidad = int(input(f"¿Cuantos integrantes tiene {nombre_gremio}?: "))
         integrantes = []
 
         for j in range(cantidad):
@@ -33,7 +33,8 @@ def cargar():
 
 def listar_clanes(gremios):
     print("Listado de Gremios")
-    for gremio, integrantes in gremios.items():
+    for gremio in gremios:
+        integrantes = gremios[gremio]
         print("Gremio:", gremio, " Cantidad de miembros:", len(integrantes))
 
 
@@ -41,10 +42,16 @@ def buscar_jugador(gremios):
     buscado = input("Ingrese el nickname del jugador a buscar: ")
     encontrado = False
 
-    for gremio, integrantes in gremios.items():
-        if buscado in integrantes:
-            print("El jugador", buscado, "pertenece al gremio:", gremio)
-            encontrado = True
+    for gremio in gremios:
+        integrantes = gremios[gremio]
+
+        for i in range(len(integrantes)):
+            if integrantes[i] == buscado:
+                print("El jugador", buscado, "pertenece al gremio:", gremio)
+                encontrado = True
+                break
+
+        if encontrado:
             break
 
     if not encontrado:
@@ -53,8 +60,6 @@ def buscar_jugador(gremios):
             buscado,
             "es Solitario (no pertenece a ningún clan).",
         )
-
-
 gremios = cargar()
 listar_clanes(gremios)
 buscar_jugador(gremios)
