@@ -13,6 +13,22 @@
     cantidad de paradas registradas en su ruta de vuelo (la lista con mayor cantidad de elementos).
 """
 
+Acá tenés la versión del ejercicio de los drones adaptada sin usar .items(), sin enumerate() y recorriendo todo con índices clásicos range(len(...)) para usar siempre una sola variable en cada bucle for:
+
+Python
+# CONSIGNA - PUNTO 4:
+# Una empresa de logística utiliza drones para entregar paquetes en zonas urbanas.
+# Crear un diccionario donde la Clave sea el ID del dron (ej: "DRON-01")
+# y el Valor sea una lista de tuplas con las coordenadas GPS de sus paradas:
+# [(latitud, longitud)].
+# Desarrollar las siguientes funciones:
+# 1. Cargar drones: Registrar 3 drones. Para cada uno, solicitar cuántas paradas
+#    hará en su ruta y pedir las coordenadas (latitud y longitud) de cada una.
+# 2. Imprimir rutas: Mostrar en pantalla el recorrido completo de cada dron
+#    indicando el número de parada y sus coordenadas.
+# 3. Ruta más larga: Determinar cuál es el dron que tiene la mayor cantidad de paradas.
+
+
 def cargar():
     drones = {}
 
@@ -21,7 +37,7 @@ def cargar():
             f"Ingrese el identificador del dron {i + 1} (ej: DRON-01): "
         )
         cant_paradas = int(
-            input(f"¿Cuántas paradas realizará el {id_dron}?: ")
+            input(f"¿Cuantas paradas realizara el {id_dron}?: ")
         )
         paradas = []
 
@@ -40,13 +56,16 @@ def cargar():
 
 
 def imprimir_rutas(drones):
-    print("--- Listado Completo de Rutas ---")
-    for id_dron, paradas in drones.items():
+    print("Listado Completo de Rutas")
+    for id_dron in drones:
+        paradas = drones[id_dron]
         print("Dron:", id_dron)
-        for idx, coord in enumerate(paradas):
+
+        for j in range(len(paradas)):
+            coord = paradas[j]
             print(
                 "  Parada",
-                idx + 1,
+                j + 1,
                 ": Latitud",
                 coord[0],
                 ", Longitud",
@@ -58,21 +77,19 @@ def ruta_mas_larga(drones):
     max_paradas = -1
     dron_mas_largo = ""
 
-    for id_dron, paradas in drones.items():
+    for id_dron in drones:
+        paradas = drones[id_dron]
+
         if len(paradas) > max_paradas:
             max_paradas = len(paradas)
             dron_mas_largo = id_dron
 
     if dron_mas_largo != "":
         print(
-            "El dron con la ruta más larga es",
-            dron_mas_largo,
-            "con",
-            max_paradas,
-            "paradas registradas.",
+            "El dron con la ruta mas larga es" ,dron_mas_largo,"conn",max_paradas,"paradas registradas.",
         )
 
 
 drones = cargar()
 imprimir_rutas(drones)
-ruta_mas_larga(drones)
+ruta_mas_larga(drones))
