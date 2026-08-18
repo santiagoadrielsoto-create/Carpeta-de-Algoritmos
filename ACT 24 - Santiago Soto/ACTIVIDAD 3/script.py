@@ -1,4 +1,4 @@
-""" CONSIGNA - PUNTO 3:
+"""3:
  Un sistema de hogar inteligente monitorea qué electrodomésticos consumen más energía
  en cada habitación de la casa.
  Crear un diccionario donde la Clave sea el nombre del ambiente (ej: "Cocina", "Dormitorio")
@@ -19,7 +19,7 @@ def cargar():
     hogar = {}
 
     for i in range(3):
-        ambiente = input(f"Ingrese el nombre de la habitación {i + 1}: ")
+        ambiente = input(f"Ingrese el nombre de la habitacion {i + 1}: ")
         dispositivos = []
 
         continuar = "si"
@@ -34,7 +34,7 @@ def cargar():
             dispositivos.append((nombre_disp, consumo))
 
             continuar = input(
-                "¿Desea ingresar otro dispositivo en esta habitación? (si/no): "
+                "¿Desea ingresar otro dispositivo en esta habitacion? (si/no): "
             )
 
         hogar[ambiente] = dispositivos
@@ -43,13 +43,16 @@ def cargar():
 
 
 def consumo_por_habitacion(hogar):
-    print("--- Consumo por Habitación ---")
-    for ambiente, dispositivos in hogar.items():
+    print("Consumo por Habitacion")
+    for ambiente in hogar:
+        dispositivos = hogar[ambiente]
         total_watts = 0
-        for disp in dispositivos:
+
+        for i in range(len(dispositivos)):
+            disp = dispositivos[i]
             total_watts = total_watts + disp[1]
 
-        print("Habitación:", ambiente, "| Consumo Total:", total_watts, "Watts")
+        print("Habitacion:", ambiente, " Consumo Total:", total_watts, "Watts")
 
 
 def dispositivo_critico(hogar):
@@ -57,8 +60,11 @@ def dispositivo_critico(hogar):
     disp_critico = ""
     hab_critica = ""
 
-    for ambiente, dispositivos in hogar.items():
-        for disp in dispositivos:
+    for ambiente in hogar:
+        dispositivos = hogar[ambiente]
+
+        for i in range(len(dispositivos)):
+            disp = dispositivos[i]
             nombre = disp[0]
             consumo = disp[1]
 
@@ -69,11 +75,11 @@ def dispositivo_critico(hogar):
 
     if disp_critico != "":
         print(
-            "Dispositivo crítico:",
+            "Dispositivo critico:",
             disp_critico,
             "con",
             max_consumo,
-            "Watts en la habitación:",
+            "Watts en la habitacion:",
             hab_critica,
         )
 
