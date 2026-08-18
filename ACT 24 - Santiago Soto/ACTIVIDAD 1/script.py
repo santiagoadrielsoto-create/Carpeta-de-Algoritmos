@@ -16,7 +16,7 @@ def cargar():
     sensores = {}
 
     for i in range(3):
-        estacion = input(f"Ingrese el nombre de la estación {i + 1}: ")
+        estacion = input(f"Ingrese el nombre de la estacion {i + 1}: ")
         lecturas = []
 
         for j in range(3):
