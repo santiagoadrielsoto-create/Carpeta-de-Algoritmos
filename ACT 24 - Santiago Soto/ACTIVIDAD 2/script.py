@@ -1,4 +1,4 @@
-""" CONSIGNA - PUNTO 2:
+""" 2:
  En un videojuego multijugador en línea, los jugadores se agrupan en clanes o gremios
  para realizar misiones cooperativas.
  Diseñar un diccionario donde la Clave sea el nombre del Gremio (ej: "DragonesDeFuego")
@@ -32,9 +32,9 @@ def cargar():
 
 
 def listar_clanes(gremios):
-    print("--- Listado de Gremios ---")
+    print("Listado de Gremios")
     for gremio, integrantes in gremios.items():
-        print("Gremio:", gremio, "| Cantidad de miembros:", len(integrantes))
+        print("Gremio:", gremio, " Cantidad de miembros:", len(integrantes))
 
 
 def buscar_jugador(gremios):
