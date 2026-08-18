@@ -51,15 +51,11 @@ def buscar_jugador(gremios):
                 encontrado = True
                 break
 
-        if encontrado:
+        if encontrado== true:
             break
 
-    if not encontrado:
-        print(
-            "El jugador",
-            buscado,
-            "es Solitario (no pertenece a ningún clan).",
-        )
+    if encontrado==false:
+        print("El jugador",buscado,"es Solitario (no pertenece a ningún clan).",)
 gremios = cargar()
 listar_clanes(gremios)
 buscar_jugador(gremios)
