@@ -1,0 +1,12 @@
+/*2. Cargar un nombre y un apellido en dos text. Al presionar un botón,
+concatenarlos y mostrarlos en un tercer text (Tener en cuenta que
+podemos modificar la propiedad value de un objeto TEXT cuando ocurre
+un evento). */
+
+
+function concatenar(){
+    let nom=document.getElementById("nombre").value;
+let ape=document.getElementById("apellido").value;
+    let parrafo= document.getElementById("text3");
+parrafo.textContent=`${ape},${nom}`
+}

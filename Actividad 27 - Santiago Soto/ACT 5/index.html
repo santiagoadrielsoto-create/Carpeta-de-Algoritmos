@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 5</title>
+    <script src="src/script.js" defer></script>
+</head>
+<body>
+    <form>
+        <p><select id="select1" onchange="procesador()">
+        <option value="400" >Intel I3 </option>
+        <option value="600" >Intel I5 </option>
+        <option value="800" >Intel I7 </option>
+    </select></p>
+    <p>El precio del procesador es: $ <input type="text" id="parrafo1"></p>
+    <p><select id="select2" onchange="monitor()">
+        <option value="250" >Samsung 20 pulgadas </option>
+        <option value="350" >Samsung 22 pulgadas </option>
+        <option value="550" >Samsung 26 pulgadas </option>
+    </select></p>
+      <p>El precio del monitor es: $ <input type="text" id="parrafo2"></p>
+    <p><select id="select3" onchange="disco()">
+        <option value="300" >Disco duro 500GB </option>
+        <option value="440" >Disco duro 1TB </option>
+        <option value="550">Disco duro 3TB </option>
+    </select></p>
+      <p>El precio del disco duro es: $ <input type="text" id="parrafo3"></p>
+  <input type="button" onclick="calcular()" value="Calcular precio">
+    <p id="presupuesto"></p>
+    </form>
+</body>
+</html>
