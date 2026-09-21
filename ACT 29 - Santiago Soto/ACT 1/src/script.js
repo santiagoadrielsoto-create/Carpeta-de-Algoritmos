@@ -7,21 +7,7 @@ de fondo preferido desde una lista de opciones.
 3. Cada vez que la página se recargue, las preferencias deben recuperarse de
 LocalStorage y aplicarse automáticamente (mostrar el nombre del usuario y
 cambiar el color de fondo). */
-/*
-let boton=document.getElementById("boton")
 
-boton.addEventListener("click",function(){
-    
-let nombre=document.getElementById("nombre")
-localStorage.setItem('nombre',nombre)
-alert(nombre)
-})
-
-function colores(){
-    let seleccion=document.getElementById("colores").options[document.getElementById('colores').selectedIndex].value;
-let color = seleccion
-
-}*/
 
  document.addEventListener("DOMContentLoaded", function() {
       cargarPreferencias();
