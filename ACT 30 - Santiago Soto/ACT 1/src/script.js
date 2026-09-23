@@ -16,21 +16,21 @@ como un carrito de compras o una lista de productos favoritos. */
 
 document.addEventListener('DOMContentLoaded', () => {
     fetch('https://fakestoreapi.com/products')
-    .then(res => res.json())
+    .then(response => response.json())
     .then(data => {
         let div = document.getElementById('prod');
         div.innerHTML = '';
-        data.forEach(p => {
+        data.forEach(producto => {
             div.innerHTML += `
                 <div class="card">
-                    <img src="${p.image}" width="80">
-                    <h3>${p.title}</h3>
-                    <p>$${p.price}</p>
+                    <img src="${producto.image}" width="80">
+                    <h3>${producto.title}</h3>
+                    <p>$${producto.price}</p>
                 </div>
             `;
         });
     })
-    .catch(err => {
+    .catch(error => {
         let div = document.getElementById('prod');
         div.innerHTML = '<p>Error al cargar</p>';
     });
