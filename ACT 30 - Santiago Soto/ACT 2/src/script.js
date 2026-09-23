@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function fetchProd() {
     fetch('https://fakestoreapi.com/products')
-    .then(res => res.json())
+    .then(response => response.json())
     .then(data => {
         let div = document.getElementById('prod');
         div.innerHTML = '';
@@ -35,7 +35,7 @@ function fetchProd() {
             `;
         });
     })
-    .catch(err => console.log('Error'));
+    .catch(error => console.log('Error'));
 }
 
 function addCart(nom, pre) {
